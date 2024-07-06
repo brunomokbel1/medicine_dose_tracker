@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request, jsonify
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='venv/templates')
 
 # Render the sign-up page
 @app.route('/')
 def signup_form():
-    return render_template('/Users/brunomokbel/PycharmProjects/pythonProject15/sign-up.html')
+    return render_template('sign-up.html')
 
 # Handle the form submission
 @app.route('/signup', methods=['POST'])
@@ -18,4 +18,4 @@ def signup():
 
 # Run the app
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5000)
