@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, jsonify
-app = Flask(__name__, template_folder='venv/templates')
+app = Flask(__name__, template_folder='template')
 
 # Render the sign-up page
 @app.route('/')
 def signup_form():
-    return render_template('sign-up.html')
+    return render_template('sign-up_2.html')
 
 # Handle the form submission
 @app.route('/signup', methods=['POST'])
